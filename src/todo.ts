@@ -19,9 +19,10 @@ export class ToDoList {
         if (taskToComplete) {
             taskToComplete.completed = true;
         }
-    }        
+    }    
+        
     deleteTask(task: string): void{
-        this.tasks.push({ task, completed: false });
+        this.tasks = this.tasks.filter(t => t.task !== task);
     }
 
     getTasks(): Task[]{
